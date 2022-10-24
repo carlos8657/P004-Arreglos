@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/app.js"></script>
+    <link rel="stylesheet" href="/css/estilo_arreglos.css">
+    <title>Arreglos</title>
+</head>
+<body onload="calcular()">
+    
+    <div id="header">
+        <header>
+            <h1>P004 Arreglos</h1>
+        </header>
+    </div>
+    
+    <div id="contenido">
+        <div class="titulo">
+            <h1>Numeros</h1>
+        </div>
+
+        <div class="numeros">
+            <ul id="normal"></ul>
+        </div>
+
+        <div class="titulo">
+            <h1>Numeros Ordenados</h1>
+        </div>
+
+        <div class="numeros">
+            <ul id="ordenado"></ul>
+        </div>
+
+        <div id="valores">
+            <h2>Promedio:</h2>
+            <input type="text" name="promedio" id="promedio" readonly style="font-size: 23px;">
+            <h2>Pares:</h2>
+            <input type="text" name="pares" id="pares" readonly style="font-size: 23px;">
+        </div>
+
+        <div id="btn">
+            <input type="button" value="Calcular"  id="boton" onclick=calcular()>
+        </div>
+
+    </div>
+
+    <div id="pie">
+        <footer>
+            <h1>Carlos Alberto Garcia Medrano 2022</h1>
+        </footer>
+    </div>
+   
+</body>
+</html>
