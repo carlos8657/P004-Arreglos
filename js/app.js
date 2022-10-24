@@ -26,6 +26,9 @@ function calcular(){
     // Mando a llamar la funcion para imprimir la lista normal
     imprimirArreglos(generarArreglo,document.getElementById("normal"));
 
+    // Mando a llamar la funcion para contrar el numero de pares en el arreglo
+    pares(generarArreglo);
+
     // Calcula el promedio del arreglo que reciba
     function promedio(arreglo){
         let suma = 0;
@@ -48,6 +51,18 @@ function calcular(){
         etiqueta.innerHTML = lista;
     
     }
+
+    // Funcion para contar el numero de pares en el arreglo
+    function pares(arreglo){
+        let pares = 0;
+        for(let i=0; i<arreglo.length; i++){
+            if(arreglo[i] %2 == 0){
+                pares++;
+            } 
+        }
+        document.getElementById("pares").value = pares;
+    }
+
 
 
 }
