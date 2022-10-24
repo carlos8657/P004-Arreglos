@@ -29,6 +29,10 @@ function calcular(){
     // Mando a llamar la funcion para contrar el numero de pares en el arreglo
     pares(generarArreglo);
 
+    // Creo un arreglo y lo ordeno para mandarlo a imprimir
+    let arregloOrdenado = ordenar(generarArreglo)
+    imprimirArreglos(arregloOrdenado,document.getElementById("ordenado"));
+
     // Calcula el promedio del arreglo que reciba
     function promedio(arreglo){
         let suma = 0;
@@ -63,6 +67,11 @@ function calcular(){
         document.getElementById("pares").value = pares;
     }
 
+    // Funcion para ordenar los numeros de mayor a menor
+    function ordenar(arreglo){
+        let ordenado = arreglo.slice();
+        return ordenado.sort((a, b) => b - a);
+    }
 
 
 }
