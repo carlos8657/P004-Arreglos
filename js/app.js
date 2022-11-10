@@ -11,29 +11,20 @@
  * 
 **/
 
+
 function calcular(){
 
-    // Genera un arreglo de 20 posiciones con valores del 1 al 100
     const generarArreglo = [];
         for (let i = 0; i < 20; i++) {
             generarArreglo.push(Math.floor(Math.random() * (100 - 1) + 1));    
         }
 
-    // Mando a llamar la funcion de promedio
-    promedio(generarArreglo);
-
-
-    // Mando a llamar la funcion para imprimir la lista normal
     imprimirArreglos(generarArreglo,document.getElementById("normal"));
-
-    // Mando a llamar la funcion para contrar el numero de pares en el arreglo
+    promedio(generarArreglo);
     pares(generarArreglo);
-
-    // Creo un arreglo y lo ordeno para mandarlo a imprimir
     let arregloOrdenado = ordenar(generarArreglo)
     imprimirArreglos(arregloOrdenado,document.getElementById("ordenado"));
 
-    // Calcula el promedio del arreglo que reciba
     function promedio(arreglo){
         let suma = 0;
         let promedio = 0;
@@ -45,7 +36,48 @@ function calcular(){
         document.getElementById("promedio").value = promedio;    
     }
 
-    // Funcion para imprimir el arreglo en forma de lista
+    function pares(arreglo){
+        let pares = 0;
+        let impares = 0;
+        for(let i=0; i<arreglo.length; i++){
+            if(arreglo[i] %2 == 0){
+                pares++;
+            }else{
+                impares++
+            }
+        }
+        document.getElementById("pares").value = pares;
+        document.getElementById("impares").value = impares;
+
+        let ppar = pares / 20 * 100
+        let pimpar = impares / 20 * 100
+        document.getElementById("pares1").innerHTML = ppar.toFixed(2) + "%";
+        document.getElementById("impares1").innerHTML = pimpar.toFixed(2) + "%"
+
+    if(ppar>=pimpar){
+        if((ppar-pimpar) > 25){
+            document.getElementById("simetrico").innerHTML = "No es simetrico";
+        }
+        else{
+            document.getElementById("simetrico").innerHTML = "Es simetrico";
+        }
+    }
+    if(pimpar>=ppar){
+        if((pimpar-ppar) > 25){
+            document.getElementById("simetrico").innerHTML = "No es simetrico";
+        }
+        else{
+            document.getElementById("simetrico").innerHTML = "Es simetrico";
+        }
+    }
+
+    }
+
+    function ordenar(arreglo){
+        let ordenado = arreglo.slice();
+        return ordenado.sort((a, b) => b - a);
+    }
+
     function imprimirArreglos(arreglo,etiqueta){
         let lista="";
 
@@ -56,22 +88,6 @@ function calcular(){
     
     }
 
-    // Funcion para contar el numero de pares en el arreglo
-    function pares(arreglo){
-        let pares = 0;
-        for(let i=0; i<arreglo.length; i++){
-            if(arreglo[i] %2 == 0){
-                pares++;
-            } 
-        }
-        document.getElementById("pares").value = pares;
-    }
-
-    // Funcion para ordenar los numeros de mayor a menor
-    function ordenar(arreglo){
-        let ordenado = arreglo.slice();
-        return ordenado.sort((a, b) => b - a);
-    }
 
 
 }
